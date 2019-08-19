@@ -8,10 +8,11 @@ class App extends Component {
     
     this.state = {
       textfield: '',
+      buttonfield: 'Card Name',
       randomfield : 'Is it Magic Time?',
-      cardName: '',
-      usd: 0.00,
-      usdFoil: 0.00,
+      cardId: '',
+      usd: '',
+      usdFoil: '',
       cardimg: ''
     }
     this.handleClick = this.handleClick.bind(this);
@@ -25,9 +26,9 @@ class App extends Component {
     axios.get('/card/' + this.state.textfield)
       .then(response => this.setState({
               randomfield: this.state.textfield,
-              cardName: response.data.id,
-              usd: response.data.price.usd,
-              usdFoil: response.data.price.usd_foil,
+              cardId: 'Card ID: ' + response.data.id,
+              usd: 'Price: $' + response.data.price.usd,
+              usdFoil: 'Price (foil): $' + response.data.price.usd_foil,
               cardimg: response.data.image_uris.small
             })
       )
@@ -35,7 +36,10 @@ class App extends Component {
 
   handleChange(event) {
     console.log(event.target.value);
-    this.setState({textfield: event.target.value});
+    this.setState({
+      buttonfield: event.target.value,
+      textfield: event.target.value
+    });
   }
 
   handleSubmit() {
@@ -45,21 +49,36 @@ class App extends Component {
   render () {
     return (
       <div className='app__container'>
-        <div className='app__container'>
-          <input placeholder="Search..." onChange={this.handleChange}/>
+        <div className='App-header'>
+          Magic: The Gathering
         </div>
-        <div className='button__container' onTouchStart={this.handleClick}>
+        <div className='search__container'>
+          <br></br>
+          <input className='search__bar' 
+            placeholder="Enter Card Name" 
+            onChange={this.handleChange}
+          />
+          <br></br>
           <button className='button' onClick={this.handleClick}>
-            Click Me
+            Search
           </button>
         </div>
-        <div className='card_container'>
-          <p>{this.state.textfield}</p>
-          <p>Card Id: {this.state.cardName}</p>
-          <p>Price:  ${this.state.usd}</p>
-          <p>Price (foil): ${this.state.usdFoil}</p>
+        <div className='cardinfo__container'>
+          <div className='cardimage__container'>  
+            <img alt="" src={this.state.cardimg}/>
+          </div>
+          <div className='carddata__container'>
+            <p>{this.state.cardId}</p>
+            <p>{this.state.usd}</p>
+            <p>{this.state.usdFoil}</p>
+            {this.state.cardId && <button className='button' >
+              Add me
+            </button>}
+          </div>
         </div>
-        <img alt="" src={this.state.cardimg}/>
+        <div className='App-footer'>
+          Trap Lord Season Begins
+        </div>
       </div>
     )
   }
