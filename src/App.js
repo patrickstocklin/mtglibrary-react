@@ -17,6 +17,7 @@ class App extends Component {
     }
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    //this.handleAddCard = this.handleAddCard.bind(this);
   }
 
   handleSearchClick() {
@@ -37,6 +38,10 @@ class App extends Component {
       buttonfield: event.target.value,
       textfield: event.target.value
     });
+  }
+
+  handleAddCard() {
+    //axios call to add card to DB
   }
 
   render () {
@@ -64,7 +69,10 @@ class App extends Component {
             <p>{this.state.cardId}</p>
             <p>{this.state.usd}</p>
             <p>{this.state.usdFoil}</p>
-            {this.state.cardId && <button className='button' >
+            <br></br>
+            <br></br>
+            <br></br>
+            {this.state.cardId && <button className='addcardbutton' >
               Add me
             </button>}
           </div>
