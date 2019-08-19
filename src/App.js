@@ -11,8 +11,9 @@ class App extends Component {
       randomfield : 'Is it Magic Time?',
       cardName: '',
       usd: 0.00,
-      usdFoil: 0.00
-   }
+      usdFoil: 0.00,
+      cardimg: ''
+    }
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +27,8 @@ class App extends Component {
               randomfield: this.state.textfield,
               cardName: response.data.id,
               usd: response.data.price.usd,
-              usdFoil: response.data.price.usd_foil
+              usdFoil: response.data.price.usd_foil,
+              cardimg: response.data.image_uris.small
             })
       )
   }
@@ -57,6 +59,7 @@ class App extends Component {
           <p>Price:  ${this.state.usd}</p>
           <p>Price (foil): ${this.state.usdFoil}</p>
         </div>
+        <img alt="" src={this.state.cardimg}/>
       </div>
     )
   }
