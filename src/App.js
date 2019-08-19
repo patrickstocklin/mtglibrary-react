@@ -15,14 +15,11 @@ class App extends Component {
       usdFoil: '',
       cardimg: ''
     }
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSearchClick = this.handleSearchClick.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
-  handleClick() {
-    console.log('it is a handled click');
-    console.log(this.state.textfield);
+  handleSearchClick() {
     axios.get('/card/' + this.state.textfield)
       .then(response => this.setState({
               randomfield: this.state.textfield,
@@ -34,16 +31,12 @@ class App extends Component {
       )
   }
 
-  handleChange(event) {
+  handleSearchChange(event) {
     console.log(event.target.value);
     this.setState({
       buttonfield: event.target.value,
       textfield: event.target.value
     });
-  }
-
-  handleSubmit() {
-    this.setState({randomfield: 'You Clicked Me, now Call a Function'});
   }
 
   render () {
@@ -56,10 +49,10 @@ class App extends Component {
           <br></br>
           <input className='search__bar' 
             placeholder="Enter Card Name" 
-            onChange={this.handleChange}
+            onChange={this.handleSearchChange}
           />
           <br></br>
-          <button className='button' onClick={this.handleClick}>
+          <button className='button' onClick={this.handleSearchClick}>
             Search
           </button>
         </div>
