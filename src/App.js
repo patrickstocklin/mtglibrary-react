@@ -17,7 +17,7 @@ class App extends Component {
     }
     this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
-    //this.handleAddCard = this.handleAddCard.bind(this);
+    this.handleAddCard = this.handleAddCard.bind(this);
   }
 
   handleSearchClick() {
@@ -28,7 +28,7 @@ class App extends Component {
               usd: 'Price: $' + response.data.price.usd,
               usdFoil: 'Price (foil): $' + response.data.price.usd_foil,
               cardimg: response.data.image_uris.small
-            })
+           })
       )
   }
 
@@ -41,7 +41,11 @@ class App extends Component {
   }
 
   handleAddCard() {
-    //axios call to add card to DB
+    axios.post('/card/' + this.state.textfield + '/add')
+      .then(response => this.setState({
+              cardimg: 'Added!'
+           })
+      )
   }
 
   render () {
@@ -72,7 +76,7 @@ class App extends Component {
             <br></br>
             <br></br>
             <br></br>
-            {this.state.cardId && <button className='addcardbutton' >
+            {this.state.cardId && <button className='addcardbutton' onClick={this.handleAddCard}>
               Add me
             </button>}
           </div>
