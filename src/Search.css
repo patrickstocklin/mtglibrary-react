@@ -35,6 +35,7 @@ html, body {
   background-color: black;
   color: gray;
   text-align: center;
+  font: 40px;
 }
 
 .App-link {

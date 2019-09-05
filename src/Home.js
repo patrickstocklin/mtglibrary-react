@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+import './Home.css'
 
 class Home extends Component {
 
   render() {
-    return <h1>blah</h1>;
+    return (
+      <div className='home__container'>
+        Some Stuff Here About the Application
+      </div>);
   }
 
 }

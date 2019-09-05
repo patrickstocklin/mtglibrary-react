@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './App.css'
+import './Search.css'
 import axios from 'axios'
 
-class App extends Component {
+class Search extends Component {
   constructor() {
     super();
     
@@ -89,4 +89,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Search

@@ -1,0 +1,22 @@
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+.Home-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: gray;
+  text-align: center;
+}
+
+.home__container {
+  background-color: black;
+  text-align: center;
+  color: grey;
+  height: 100vh;
+  width: 100vw;
+}
