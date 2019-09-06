@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.Header {
+.app {
   margin: 0;
   padding: 0;
   text-align: center;
@@ -21,35 +21,4 @@ code {
   display: table;
   color: grey;
   font-size: 15px;
-}
-
-.Header h1 {
-  margin: 0;
-  padding: 0;
-}
-
-.Header li {
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
-}
-
-.Header ul {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.Header div {
-
-}
-
-.HeaderDiv {
-  height: 100px;
-  text-align: center;
 }

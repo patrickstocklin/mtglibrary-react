@@ -1,26 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './Home';
-import Search from './Search';
+import './header.css';
+import Home from './home';
+import Search from './search';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 
 const routing = (  
   <Router>  
-    <div className='Header'>
-      <div className='HeaderDiv'>
+    <div className='app'>
+      <div className='header-div'>
       <ul>
         <li>  
-          <Link to="/">Home </Link>  
+          <Link className='header-link' to="/">Home</Link>  
         </li>      
         <li>
-          <Link to="/search">Search </Link>  
+          <Link className='header-link' to="/search">Search</Link>  
+        </li>
+        <li>
+          <Link className='header-link' to="/search">Library</Link>  
         </li>  
       </ul>   
       </div> 
       <Route exact path="/search" component={Search} />  
+      <Route exact path="/library" component={Search} />
       <Route exact path="/" component={Home} />  
     </div>  
   </Router>  

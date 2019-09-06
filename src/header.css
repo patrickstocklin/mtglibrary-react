@@ -1,0 +1,32 @@
+.header-div h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.header-div li {
+  margin: 0 20px 0 20px;
+  padding: 0 0 0 0;
+  text-align: center;
+  vertical-align: middle;
+  display: inline;
+  font-size: 24px;
+}
+
+.header-div ul {
+  width: 100%;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-div {
+  height: 100px;
+  text-align: center;
+}
+
+.header-link {
+  text-decoration: none;
+}
