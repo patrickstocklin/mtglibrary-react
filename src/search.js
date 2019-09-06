@@ -55,7 +55,6 @@ class Search extends Component {
           Magic: The Gathering
         </div>
         <div className='search__container'>
-          <br></br>
           <input className='search__bar' 
             placeholder="Enter Card Name" 
             onChange={this.handleSearchChange}

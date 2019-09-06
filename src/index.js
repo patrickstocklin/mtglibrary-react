@@ -4,6 +4,7 @@ import './index.css';
 import './header.css';
 import Home from './home';
 import Search from './search';
+import Library from './library';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
@@ -20,13 +21,13 @@ const routing = (
           <Link className='header-link' to="/search">Search</Link>  
         </li>
         <li>
-          <Link className='header-link' to="/search">Library</Link>  
+          <Link className='header-link' to="/library">Library</Link>  
         </li>  
       </ul>   
       </div> 
-      <Route exact path="/search" component={Search} />  
-      <Route exact path="/library" component={Search} />
       <Route exact path="/" component={Home} />  
+      <Route exact path="/search" component={Search} />  
+      <Route exact path="/library" component={Library} />
     </div>  
   </Router>  
 )  
