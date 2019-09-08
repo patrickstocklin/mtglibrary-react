@@ -7,7 +7,7 @@ class Library extends Component {
     super();
 
     this.state = {
-      collections: 'Collections To Be Discovered'
+      collections: ['collections to be returned']
     }
     this.getCollections = this.getCollections.bind(this);
   }
@@ -15,7 +15,7 @@ class Library extends Component {
   getCollections() {
     axios.get('/collection/all')
       .then(response => this.setState({
-              collections: response.data
+              collections: response.data.collections
             })
       );
     console.log(this.state.collections);
@@ -30,7 +30,7 @@ class Library extends Component {
           <button onClick={this.getCollections}>
             Discover Collections
           </button>
-          <p>{this.state.collections}</p>
+          {this.state.collections.map(collection => <div>{collection}</div>)}
         </div>
     )
   }
