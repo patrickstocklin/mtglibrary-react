@@ -18,6 +18,7 @@ class Library extends Component {
               collections: response.data
             })
       );
+    console.log(this.state.collections);
   }
 
 
