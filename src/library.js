@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './library.css'
+import Dropdown from './dropdown';
 import axios from 'axios'
 
 class Library extends Component {
@@ -31,6 +32,8 @@ class Library extends Component {
             Discover Collections
           </button>
           {this.state.collections.map(collection => <div>{collection}</div>)}
+          <br></br>
+          <Dropdown></Dropdown>
         </div>
     )
   }
