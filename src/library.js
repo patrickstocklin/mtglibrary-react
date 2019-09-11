@@ -39,7 +39,7 @@ class Library extends Component {
           </button>
           {this.state.collections.map(collection => <div>{collection}</div>)}
           <br></br>
-          <Dropdown callbackFromParent={this.getCollectionsCallback}></Dropdown>
+          <Dropdown getCollectionsCallback={this.getCollectionsCallback}></Dropdown>
           <br></br>
           <br></br>
           <br></br>
