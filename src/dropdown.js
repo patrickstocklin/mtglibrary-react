@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import './dropdown.css'
 
 class Dropdown extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       buttonText: 'Library',
@@ -34,6 +34,8 @@ class Dropdown extends Component {
   }
 
   setCollection(value) {
+    this.props.callbackFromParent(this.state.collections[value].name);
+
     this.setState({ 
       buttonText: this.state.collections[value].name,
       //Set collection content here w/ axios call, learn to pass back to parent component
