@@ -24,13 +24,11 @@ class Dropdown extends Component {
 
   showDropdownMenu(event) {
     event.preventDefault();
-
     /*
       Make Axios call to get available collections from Spring App
       Set state's Collections that will be fetched by index and passed back
      */
     this.getCollections();
-    this.setState({ collections: [{"name":"pat"},{"name":"nate"}]});
 
     this.setState({ 
       displayMenu: true }, () => {
@@ -55,7 +53,6 @@ class Dropdown extends Component {
               collections: response.data.collections
             })
       );
-    console.log(this.state.collections);
   }
 
   setCollection(value) {
@@ -92,7 +89,6 @@ class Dropdown extends Component {
         (null)
         }
 
-        { this.state.collectionContent }
       </div>
     );
   }
