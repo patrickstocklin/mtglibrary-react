@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './library.css'
 import Dropdown from './dropdown';
+import Collection from './collection';
+
+//TODO also invoke a GET collections here when getCollectionsCallback is invoked and pass to Collections
 
 class Library extends Component {
   constructor() {
@@ -8,13 +11,17 @@ class Library extends Component {
 
     this.state = {
       collections: ['collections to be returned'],
-      collectionData: 'collectionDataToBeReturned'
+      collectionData: 'collectionDataToBeReturned',
+      selectedCollection: null
     }
     this.getCollectionsCallback = this.getCollectionsCallback.bind(this);
   }
 
-  getCollectionsCallback(dataFromCollection) {
-    this.setState({ collectionData: dataFromCollection});
+  getCollectionsCallback(selectedCollection) {
+    /* 
+      Trailing function forces a mutated State to occur immediately
+     */
+    this.setState({ selectedCollection: selectedCollection}, () => {});
   }
 
   render () {
@@ -25,7 +32,8 @@ class Library extends Component {
           <br></br>
           <br></br>
           <br></br>
-          {this.state.collectionData}
+          <Collection selectedCollection={this.state.selectedCollection}></Collection>
+          
         </div>
     )
   }

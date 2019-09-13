@@ -1,0 +1,16 @@
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
+.collection-container {
+  background-color: black;
+  text-align: center;
+  color: grey;
+  position: relative;
+  display: inline-block;
+}
+
+.collection-container h1 {
+  background-color: white;
+}
