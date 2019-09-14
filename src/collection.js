@@ -17,6 +17,7 @@ class Collection extends Component {
     const listOfCards = this.props.listOfCards.map(
       (card) => 
       <tr key={card.name}>
+        <td><img alt="" src={card.image_uris.small}/></td>
         <td>{card.name}</td>
         <td>${card.price.usd}</td>
       </tr>
@@ -35,15 +36,17 @@ class Collection extends Component {
         <div className='collection-container'>
           { this.props.selectedCollection ? (
             <table>
+            <tr key="Footer">
+              <td></td>
+              <td>Total</td>
+              <td>${sumOfCardPrices}</td>
+            </tr>
             <tr key="Header">
+              <td>Card Image</td>
               <td>Card</td>
               <td>Price (USD)</td>
             </tr>
             {listOfCards}
-            <tr key="Footer">
-              <td>Total</td>
-              <td>${sumOfCardPrices}</td>
-            </tr>
             </table>
             ):
             (null)
