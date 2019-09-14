@@ -6,9 +6,9 @@ class Collection extends Component {
     super(props);
 
     this.state = {
+      //init to null from library
       selectedCollection: this.props.selectedCollection,
-      //Set to empty and figure out how to mutate after selectedCollection is changed
-      // listOfCards: [{"name":"Arclight Phoenix", "price":"30"},{"name":"Leyline of the Void", "price":"20"}]
+      //init to [] from library
       listOfCards: this.props.listOfCards
     }
   }
@@ -18,9 +18,11 @@ class Collection extends Component {
       (card) => 
       <tr key={card.name}>
         <td>{card.name}</td>
-        <td>${card.price}</td>
+        <td>${card.price.usd}</td>
       </tr>
     );
+
+    //Do sum here
 
     /*
       Use this.props to automatically rerender component when
@@ -28,7 +30,6 @@ class Collection extends Component {
      */
     return (
         <div className='collection-container'>
-          <p>{this.props.selectedCollection}</p>
           { this.props.selectedCollection ? (
             <table>
             <tr key="Header">
