@@ -23,10 +23,9 @@ class Collection extends Component {
     );
 
     //Do sum here
-    var sum = 0;
-    const sumOfCardPrices = this.props.listOfCards.reduce(
+    const sumOfCardPrices = parseFloat(this.props.listOfCards.reduce(
       (cardA, cardB) => (cardA + cardB.price.usd), 0
-    );
+    )).toFixed(2);
 
     /*
       Use this.props to automatically rerender component when
