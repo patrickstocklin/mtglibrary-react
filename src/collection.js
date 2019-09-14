@@ -8,13 +8,13 @@ class Collection extends Component {
     this.state = {
       selectedCollection: this.props.selectedCollection,
       //Set to empty and figure out how to mutate after selectedCollection is changed
-      listOfCards: [{"name":"Arclight Phoenix", "price":"30"},{"name":"Leyline of the Void", "price":"20"}]
+      // listOfCards: [{"name":"Arclight Phoenix", "price":"30"},{"name":"Leyline of the Void", "price":"20"}]
+      listOfCards: this.props.listOfCards
     }
   }
 
   render () {
-    
-    const listOfCards = this.state.listOfCards.map(
+    const listOfCards = this.props.listOfCards.map(
       (card) => 
       <tr key={card.name}>
         <td>{card.name}</td>
